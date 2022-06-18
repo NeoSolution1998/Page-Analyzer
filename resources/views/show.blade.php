@@ -22,8 +22,9 @@
             </table>
         </div>
 
+
         <h2 class="mt-5 mb-3">Проверки</h2>
-        <form method="post" action="/urls/{{ $url->id }}/checks">
+        <form method="post" action={{ route('urls.checks', $url->id) }}>
             @csrf
             <input type="hidden" name="_token" value="nNb9ZHTDEOXb8Ke2Osk5fJKReg8EUL9vOwpMMnuP">
             <input type="submit" class="btn btn-primary" value="Запустить проверку">

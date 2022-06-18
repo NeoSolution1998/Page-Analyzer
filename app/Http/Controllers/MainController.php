@@ -33,4 +33,9 @@ class MainController extends Controller
         $url = Url::findOrFail($id);
         return view('show', compact('url'));
     }
+
+    public function checks(Request $request, $id) {
+        dd($id);
+        return redirect()->route('urls.show', ['id' => $id]);
+    }
 }

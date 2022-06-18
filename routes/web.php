@@ -19,7 +19,10 @@ Route::get('/urls', 'App\Http\Controllers\MainController@index')->name('urls.ind
 
 Route::post('/urls', 'App\Http\Controllers\MainController@store')->name('urls.store');
 
+Route::post('/urls/{id}/checks', 'App\Http\Controllers\MainController@checks')->name('urls.checks');
+
 Route::get('/urls/{id}', 'App\Http\Controllers\MainController@show')->name('urls.show');
 
-//Route::post('/urls/{id}/checks', 'App\Http\Controllers\MainController@urls_id_post')->name('post-urlsId');
+
+
 

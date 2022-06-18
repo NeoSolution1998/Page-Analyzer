@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('urls', function (Blueprint $table) {
+        Schema::create('url_checks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
+            $table->foreignId('url_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->smallInteger('status_code')->nullable();
+            $table->string('h1', 1000)->nullable();
+            $table->string('title', 1000)->nullable();
+            $table->string('description', 2000)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('urls');
+        Schema::dropIfExists('url_checks');
     }
 };

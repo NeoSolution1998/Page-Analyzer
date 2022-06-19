@@ -13,6 +13,6 @@ class Url extends Model
     {
         // У каждого пользователя много постов
         // hasMany определяется у модели, имеющей внешние ключи в других таблицах
-        return $this->hasMany('App\Models\UrlCheck');
+        return $this->hasMany(UrlCheck::class);
     }
 }

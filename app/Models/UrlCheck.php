@@ -13,6 +13,6 @@ class UrlCheck extends Model
     {
         // Принадлежит пользователю
         // belongsTo определяется у модели содержащей внешний ключ
-        return $this->belongsTo('App\Models\Url');
+        return $this->belongsTo(Url::class);
     }
 }

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@include('flash::message')
+
 @section('main_content')
     <div class="container-lg">
         <h1 class="mt-5 mb-3">Сайт: {{ $url->name }}</h1>
@@ -22,11 +24,9 @@
             </table>
         </div>
 
-
         <h2 class="mt-5 mb-3">Проверки</h2>
         <form method="post" action={{ route('urls.checks', $url->id) }}>
             @csrf
-            <input type="hidden" name="_token" value="nNb9ZHTDEOXb8Ke2Osk5fJKReg8EUL9vOwpMMnuP">
             <input type="submit" class="btn btn-primary" value="Запустить проверку">
         </form><br>
 
@@ -40,16 +40,16 @@
                     <th>description</th>
                     <th>Дата создания</th>
                 </tr>
-
-                <tr>
-                    <td>79</td>
-                    <td>200</td>
-                    <td>function...</td>
-                    <td>Mail.ru...</td>
-                    <td>Почта... </td>
-                    <td>2022...</td>
-                </tr>
-
+                @foreach ($url->checks as $url_check)
+                    <tr>
+                        <td>{{ $url_check->id }}</td>
+                        <td>{{ $url_check->status_code }}</td>
+                        <td>{{ $url_check->h1 }}</td>
+                        <td>{{ $url_check->title }}</td>
+                        <td>{{ $url_check->description }}</td>
+                        <td>{{ $url_check->created_at }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

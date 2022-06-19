@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@include('flash::message')
+
 @section('main_content')
 
 @if(Session::has('success'))

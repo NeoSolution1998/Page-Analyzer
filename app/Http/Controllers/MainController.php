@@ -8,6 +8,7 @@ use App\Models\UrlCheck;
 use Illuminate\Support\Facades\Http;
 use DiDom\Document;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class MainController extends Controller
 {
@@ -74,7 +75,9 @@ class MainController extends Controller
                 'status_code' => $status,
                 'h1' => $h1,
                 'title' => $title,
-                'description' => $description
+                'description' => $description,
+                'created_at' => Carbon::now()->toDateTimeString(),
+                'updated_at' => Carbon::now()->toDateTimeString()
             ]
         );
         //$url = new UrlCheck();

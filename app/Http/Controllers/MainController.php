@@ -52,9 +52,9 @@ class MainController extends Controller
 
         $status = $response->status();
         $document = new Document($response_body);
-        $h1 = optional($document->first('h1'))->text(); $h1 = substr($h1, 0, 19) . '...'; 
-        $title = optional($document->first('title'))->text(); $title = substr($title, 0, 19) . '...'; 
-        $description = optional($document->first('meta[name=description]'))->attr('content'); $description = substr($description, 0, 19) . '...'; 
+        $h1 = optional($document->first('h1'))->text();
+        $title = optional($document->first('title'))->text(); 
+        $description = optional($document->first('meta[name=description]'))->attr('content');
 
         $url = new UrlCheck();
 

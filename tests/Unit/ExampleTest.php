@@ -11,7 +11,7 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function Test_That_True_Is_True()
+    public function testExample()
     {
         $this->assertTrue(true);
     }

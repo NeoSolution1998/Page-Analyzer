@@ -56,7 +56,6 @@ class MainController extends Controller
 
     public function checks(Request $request, string $id)
     {
-        dd(gettype($id));
         $urls = DB::table('urls')->find($id);
         //$urls = Url::findOrFail($id);
         $response = Http::get($urls->name);

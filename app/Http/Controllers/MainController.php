@@ -49,7 +49,7 @@ class MainController extends Controller
 
     public function checks(Request $request, $id)
     {
-        $urls = Url::findOrFail($id);
+        $urls = Url::find($id);
         $response = Http::get($urls->name);
         $response_body = $response->body();
 

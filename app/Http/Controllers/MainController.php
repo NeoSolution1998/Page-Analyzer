@@ -7,6 +7,7 @@ use App\Models\Url;
 use App\Models\UrlCheck;
 use Illuminate\Support\Facades\Http;
 use DiDom\Document;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -29,27 +30,35 @@ class MainController extends Controller
         ]);
         $name = $request->input('url.name');
 
-        if (Url::where('name', $name)->exists()) {
+        if (DB::table('urls')->where('name', $name)->exists()) {
             flash('Страница уже существует')->error();
             return redirect()->route('urls.index');
         } else {
-            $url = new Url();
-            $url->name = $name;
-            $url->save();
+            DB::table('urls')->insert([
+                'name' => $name
+            ]);
+            //$url = new Url();
+            //$url->name = $name;
+            // $url->save();
             flash('Страница успешно добавлена');
             return redirect()->route('urls.index');
         }
     }
 
-    public function show($id)
+    public function show(string $id)
     {
-        $url = Url::findOrFail($id);
-        return view('show', compact('url'));
+        $url = DB::table('urls')->find($id);
+        $url_check = DB::table('url_checks')->find($id);
+        $url_checks = DB::table('url_checks')->where('url_id', $id)->get();
+
+        return view('show', compact('url', 'url_checks'));
     }
 
-    public function checks(Request $request, $id)
+    public function checks(Request $request, string $id)
     {
-        $urls = Url::findOrFail($id);
+        dd(gettype($id));
+        $urls = DB::table('urls')->find($id);
+        //$urls = Url::findOrFail($id);
         $response = Http::get($urls->name);
         $response_body = $response->body();
 
@@ -60,14 +69,23 @@ class MainController extends Controller
         $title = optional($document->first('title'))->text();
         $description = optional($document->first('meta[name=description]'))->attr('content');
 
-        $url = new UrlCheck();
+        DB::table('url_checks')->insert(
+            [
+                'url_id' => $id,
+                'status_code' => $status,
+                'h1' => $h1,
+                'title' => $title,
+                'description' => $description
+            ]
+        );
+        //$url = new UrlCheck();
 
-        $url->url_id = $id;
-        $url->status_code = $status;
-        $url->h1 = $h1;
-        $url->title = $title;
-        $url->description = $description;
-        $url->save();
+        //$url->url_id = $id;
+        //$url->status_code = $status;
+        // $url->h1 = $h1;
+        //$url->title = $title;
+        //$url->description = $description;
+        //$url->save();
         flash('Страница успешно проверена');
         return redirect()->route('urls.show', ['id' => $id]);
     }

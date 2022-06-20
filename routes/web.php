@@ -22,7 +22,3 @@ Route::post('/urls', 'App\Http\Controllers\MainController@store')->name('urls.st
 Route::post('/urls/{id}/checks', 'App\Http\Controllers\MainController@checks')->name('urls.checks');
 
 Route::get('/urls/{id}', 'App\Http\Controllers\MainController@show')->name('urls.show');
-
-
-
-

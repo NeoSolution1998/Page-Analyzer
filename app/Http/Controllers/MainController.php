@@ -10,16 +10,19 @@ use DiDom\Document;
 
 class MainController extends Controller
 {
-    public function home() {
+    public function home()
+    {
         return view('home');
-    } 
+    }
 
-    public function index() {
+    public function index()
+    {
         $urls = new Url();
         return view('index', compact('urls'));
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $this->validate($request, [
             'url.name' => 'required|max:255|min:4'
@@ -36,15 +39,16 @@ class MainController extends Controller
             flash('Страница успешно добавлена');
             return redirect()->route('urls.index');
         }
-    
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $url = Url::findOrFail($id);
         return view('show', compact('url'));
     }
 
-    public function checks(Request $request, $id) {
+    public function checks(Request $request, $id)
+    {
         $urls = Url::findOrFail($id);
         $response = Http::get($urls->name);
         $response_body = $response->body();
@@ -53,7 +57,7 @@ class MainController extends Controller
         $status = $response->status();
         $document = new Document($response_body);
         $h1 = optional($document->first('h1'))->text();
-        $title = optional($document->first('title'))->text(); 
+        $title = optional($document->first('title'))->text();
         $description = optional($document->first('meta[name=description]'))->attr('content');
 
         $url = new UrlCheck();

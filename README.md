@@ -2,4 +2,4 @@
 [![Actions Status](https://github.com/NeoSolution1998/php-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/NeoSolution1998/php-project-lvl3/actions)
 
 
-https://hexlet-projectlvl3.herokuapp.com/
+http://hexlet-projectlvl3.herokuapp.com/

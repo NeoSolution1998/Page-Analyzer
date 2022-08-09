@@ -12,10 +12,15 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testHome()
     {
-        $response = $this->get('/');
+        $response = $this->get(route('/.home'));
+        $response->assertOk();
+    }
 
-        $response->assertStatus(200);
+    public function testIndex()
+    {
+        $response = $this->get(route('urls.index'));
+        $response->assertOk();
     }
 }

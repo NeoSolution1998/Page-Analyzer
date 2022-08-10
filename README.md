@@ -7,14 +7,14 @@
 [http://site-analyzer.herokuapp.com/](http://hexlet-projectlvl3.herokuapp.com/)
 
 ### Описание:
-[Page Analyzer](http://hexlet-projectlvl3.herokuapp.com/) - сайт, который анализирует указанные страницы на SEO пригодность по аналогии с [varvy](https://www.internetmarketingninjas.com/google-core-web-vitals/).  
+[Page Analyzer](http://hexlet-projectlvl3.herokuapp.com/) - сайт, который анализирует указанные страницы на SEO пригодность.  
 Полноценный веб-сайт на базе фреймворка Laravel. В этом проекте отрабатываются базовые принципы  
 построения современных сайтов на MVC-архитектуре: работа с роутингом, обработчиками запросов и  
 шаблонизатором, взаимодействие с базой данных через Query Builder.
 
 ### Установка:
 ```sh
-$ git clone https://github.com/Maksyliator/php-project-lvl3.git
+$ git clone https://github.com/NeoSolution1998/php-project-lvl3.git
 $ cd php-project-lvl3
 $ make setup
 ```

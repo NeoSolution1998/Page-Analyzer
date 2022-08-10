@@ -2,15 +2,12 @@
 [![Actions Status](https://github.com/NeoSolution1998/php-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/NeoSolution1998/php-project-lvl3/actions)
 
 <a href="https://ibb.co/xgSd8sc"><img src="https://i.ibb.co/T0BdqTn/image.jpg" alt="image" border="0"></a>
-<a href="https://ibb.co/q56nDmj"><img src="https://i.ibb.co/sH7PgsR/1.jpg" alt="1" border="0"></a>
-<a href="https://ibb.co/px5RB0d"><img src="https://i.ibb.co/L8HJXk1/2.jpg" alt="2" border="0"></a>
-
 
 ### Проект на HEROKU:
 [http://site-analyzer.herokuapp.com/](http://hexlet-projectlvl3.herokuapp.com/)
 
 ### Описание:
-[Page Analyzer](http://site-analyzer.herokuapp.com/) - сайт, который анализирует указанные страницы на SEO пригодность по аналогии с [varvy](https://www.internetmarketingninjas.com/google-core-web-vitals/).  
+[Page Analyzer](http://hexlet-projectlvl3.herokuapp.com/) - сайт, который анализирует указанные страницы на SEO пригодность по аналогии с [varvy](https://www.internetmarketingninjas.com/google-core-web-vitals/).  
 Полноценный веб-сайт на базе фреймворка Laravel. В этом проекте отрабатываются базовые принципы  
 построения современных сайтов на MVC-архитектуре: работа с роутингом, обработчиками запросов и  
 шаблонизатором, взаимодействие с базой данных через Query Builder.

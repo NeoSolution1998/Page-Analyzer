@@ -4,7 +4,7 @@
 <a href="https://ibb.co/xgSd8sc"><img src="https://i.ibb.co/T0BdqTn/image.jpg" alt="image" border="0"></a>
 
 ### Проект на HEROKU:
-[http://site-analyzer.herokuapp.com/](http://hexlet-projectlvl3.herokuapp.com/)
+[http://hexlet-projectlvl3.herokuapp.com/](http://hexlet-projectlvl3.herokuapp.com/)
 
 ### Описание:
 [Page Analyzer](http://hexlet-projectlvl3.herokuapp.com/) - сайт, который анализирует указанные страницы на SEO пригодность.  
